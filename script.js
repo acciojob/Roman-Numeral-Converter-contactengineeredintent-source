@@ -79,7 +79,7 @@ function convertToRoman(num) {
       romanString += getRomanString(currentNum, map);
       digitCount--;
     }
-    console.log(romanString);
+    return romanString;
     
     
 
