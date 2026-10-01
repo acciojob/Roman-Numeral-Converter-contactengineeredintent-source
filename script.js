@@ -1,3 +1,5 @@
+'use strict';
+
 function getRomanString(num, map){
   if(map.has(num)){
     return map.get(num);
@@ -7,8 +9,8 @@ function getRomanString(num, map){
     while(num > 0){
       let largestKey = 0;
       // console.log(`num = ${num}`);
-      for(const[key, value] of map){
-        if(key >= largestKey && key <= num){
+      for(const[key] of map){
+        if(key <= num && key > largestKey){
           largestKey = key;
         }
       }
@@ -31,10 +33,10 @@ function convertToRoman(num) {
       6:['L', 50], 
       7:['XL',40],
       8:['X', 10], 
-      9:['V', 5], 
-      10:['IV',4],
-      11:['I', 1],
-      12:['IX', 9]
+      9:['IX', 9],
+      10:['V', 5], 
+      11:['IV',4],
+      12:['I', 1]
     };
 
     //seperating the digits
@@ -78,11 +80,13 @@ function convertToRoman(num) {
       romanString += getRomanString(currentNum, map);
       digitCount--;
     }
-    return romanString;
+    console.log(romanString);
     
     
 
 }
+
+// convertToRoman(14);
 
 
 }
