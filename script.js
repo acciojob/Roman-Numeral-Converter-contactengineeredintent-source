@@ -1,4 +1,3 @@
-'use strict';
 
 function getRomanString(num, map){
   if(map.has(num)){
